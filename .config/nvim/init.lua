@@ -13,6 +13,7 @@ if not vim.uv.fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+vim.lsp.enable { 'clangd', 'lua_ls', 'basedpyright', 'ruff', 'marksman' }
 
 require('lazy').setup({
   { 'tpope/vim-sleuth', event = { 'BufReadPost', 'BufNewFile' } },
